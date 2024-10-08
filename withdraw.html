@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Withdraw herel</title>
+</head>
+<body>
+    <label for="amount">enter the amount and press Confirm :</label>
+    <input type="number" name="amount" id="amount">
+    <button onclick="debitAmount()">Confirm</button>
+    <button onclick="tryAgain()">Incorrect</button> <br>
+    <p id="message"></p> <br>
+    <button onclick="window.location.href= 'C:/JavaScriptOnly/count/atm.html'" >Back to main menu</button>
+
+   
+    <script>
+       
+        function debitAmount(){
+            const amount = parseInt(document.getElementById('amount').value )
+            let balance = localStorage.getItem('balance')
+            if (amount>0 && amount<=balance){
+                balance -= amount
+                localStorage.setItem('balance', balance)
+                document.getElementById('message').textContent = 'You are succesfully debited rupees '+amount
+            }
+           else if(amount>balance){
+            document.getElementById('message').innerText = 'Insufficient Balance'
+           }
+           else{
+            document.getElementById('message').innerText = 'Enter a valid amount'
+
+           }
+        }
+           function tryAgain(){
+            let correctIt = document.getElementById('amount')
+            correctIt.value = ""
+           }
+        
+    </script>
+</body>
+</html>
+<!-- if (!isNaN(amount) && amount !== 0){
+    alert('The entered amount is '+amount)
+    document.getElementById('debit').innerHTML = 'Rupees '+ amount + ' succesfully debited'
+   }
+   else{
+       alert('You didnt entered anything')
+   } -->

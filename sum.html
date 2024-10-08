@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sum of array</title>
+</head>
+<body>
+    <label for="element">Enter the elements of array:</label>
+    <input type="text" id="element" placeholder="enter the array">
+    <input type="button" value="Sum" onclick="sumArray()">
+    <p id="result"></p>
+    <script>
+        let sum = 0
+        function sumArray(){
+            let elm = document.getElementById('element').value
+            let arr = elm.split(' ').map(item=>item.trim())
+            console.log(arr)
+            for(let val of arr){
+                sum = sum + Number(val)
+            }
+            document.getElementById('result').innerHTML = 'sum of array is: '+sum
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM</title>
+</head>
+<body>
+    <input type="button" value="Withdraw " onclick=" window.location.href= 'C:/JavaScriptOnly/count/withdraw.html'" >
+    <input type="button" value="Deposite" onclick=" window.location.href= 'C:/JavaScriptOnly/count/deposite.html'"><br><br>
+    <input type="button" value="CheckBalance" onclick=" window.location.href= 'C:/JavaScriptOnly/count/balance.html'">
+    <input type="button" value="Others" onclick="window.location.href= 'C:/JavaScriptOnly/count/others.html'">
+    <script>
+        if (localStorage.getItem('balance') === null){
+            localStorage.setItem('balance', 10000)
+            
+        }
+        // window.onload = function(){
+        //     const pin = prompt("enter the 4 digit pin")
+        //     const entry = Number(pin)
+        //     if(entry === 1234 ){
+        //         alert("Welcome")
+        //     }
+        //     else{
+        //         alert("incorrect pin Try again")
+        //         window.onload()
+        //     }
+        // }
+       
+    </script>
+</body>
+</html>

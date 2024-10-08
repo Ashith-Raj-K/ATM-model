@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deposite</title>
+</head>
+<body>
+    <label for="deposite">Enter the amount: </label>
+    <input type="number" name="deposite" id="deposite">
+    <button onclick="deposite()">Confirm</button>
+    <p id="showbal"></p>
+    <button onclick="window.location.href= 'C:/JavaScriptOnly/count/atm.html'" >Back to main menu</button>
+    <script>
+        function deposite(){
+            const amount = parseFloat(document.getElementById('deposite').value)
+            let balance = parseFloat(localStorage.getItem('balance'))
+            if(amount > 0){   
+            balance += amount
+            localStorage.setItem('balance', balance)
+            document.getElementById('showbal').innerText = 'Current balance is '+balance
+            }
+        }
+    </script>
+</body>
+</html>
